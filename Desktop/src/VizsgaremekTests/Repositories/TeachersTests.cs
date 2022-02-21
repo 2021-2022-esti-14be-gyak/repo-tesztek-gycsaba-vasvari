@@ -101,8 +101,3 @@ namespace Vizsgaremek.Repositories.Tests
         }
     }
 }
-
-
-        }
-    }
-}
