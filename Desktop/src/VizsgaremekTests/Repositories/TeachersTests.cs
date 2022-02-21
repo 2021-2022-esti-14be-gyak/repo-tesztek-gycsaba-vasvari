@@ -31,6 +31,8 @@ namespace Vizsgaremek.Repositories.Tests
             int expected = 6;
             int actaul = teachers.GetAll().Count;
 
+            // A teszt megvizsgálja, hogy megvan-e mind a hat
+            Assert.AreEqual(expected, actaul, "A teszt adatok nem készülnek el megfelelő számban!");
 
         }
     }
