@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+ <!--
+    https://tipsfordev.com/wpf-localization-multiple-languages-resourcedictionary-vs-resource-file-resx
+    https://docs.microsoft.com/et-ee/dotnet/desktop/wpf/advanced/how-to-use-a-resourcedictionary-to-manage-localizable-string-resources?view=netframeworkdesktop-4.8
+ -->
+    <system:String x:Key="strMenuExit">Exit</system:String>
+    
+</ResourceDictionary>

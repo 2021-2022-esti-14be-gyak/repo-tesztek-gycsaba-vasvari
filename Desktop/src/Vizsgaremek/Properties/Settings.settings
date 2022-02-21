@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vizsgaremek.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="developVersion" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="storedDataSource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="storedDataSourceToolTip" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="storedLanguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hu-HU</Value>
+    </Setting>
+    <Setting Name="storedLanguageToolTip" Type="System.String" Scope="User">
+      <Value Profile="(Default)">magyar</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

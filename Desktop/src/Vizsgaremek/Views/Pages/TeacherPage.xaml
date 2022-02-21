@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Vizsgaremek.Views.Pages.TeacherPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vizsgaremek.Views.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid x:Name="UpdatePageHeader" HorizontalAlignment="Right" VerticalAlignment="Top" Height="48">
+            <Image x:Name="UpdatePageBackImage" Source="/Icons/back_icon.png" PreviewMouseLeftButtonDown="UpdatePageBackImage_PreviewMouseLeftButtonDown" />
+        </Grid>
+        <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20 5 20 5" Width="1030">
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock x:Name="WelcomeText" FontSize="24" Text="Tanár adatok kezelése"></TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0 10 0 0">
+                <DataGrid  x:Name="dgTeachers" 
+                           AutoGenerateColumns="False"       
+                           ItemsSource="{Binding DisplayedTeachers}"
+                           >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="teacherID" MinWidth="100" IsReadOnly="True" Header="Azonosító" Binding="{Binding Id}"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="teacherLastName" MinWidth="100" IsReadOnly="True" Header="Vezetéknév" Binding="{Binding LastName}"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="teacherFirstName" MinWidth="100" IsReadOnly="True" Header="Keresztnév" Binding="{Binding FirstName}"></DataGridTextColumn>
+                        <DataGridTextColumn x:Name="teacherPassword" MinWidth="100" IsReadOnly="True" Header="Jelszó" Binding="{Binding Password}"></DataGridTextColumn>
+                        <DataGridCheckBoxColumn x:Name="teacherMeal" MinWidth="50" IsReadOnly="False" Header="Étkezés" Binding="{Binding Meal}"></DataGridCheckBoxColumn>
+                        <DataGridTextColumn x:Name="teacherEmploeyment" MinWidth="200" IsReadOnly="True" Header="Foglalkoztatás" Binding="{Binding EmploeymentName}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

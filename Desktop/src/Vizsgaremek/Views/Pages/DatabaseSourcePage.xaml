@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Vizsgaremek.Views.Pages.DatabaseSourcePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vizsgaremek.Views.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="48" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Image Source="/Icons/back_icon.png" Height="48" PreviewMouseLeftButtonUp="Image_PreviewMouseLeftButtonUp"></Image>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="200 5 200 5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="WelcomeText" FontSize="24" Text="Adatábzis választás"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="20 0 0 10">
+                <Label>Válasszon adatbázist:</Label>
+                <ListBox x:Name="listDatabaseSources"  
+                        Height="80" 
+                        Width="200" 
+                        ItemsSource="{Binding Path=DisplayedDatabaseSources}" 
+                        SelectedItem="{Binding Path=SelectedDatabaseSource}"
+                        SelectedIndex="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock 
+                                Text="{Binding Path=Name}" 
+                                ToolTipService.ToolTip="{Binding Path=ToolTip}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Orientation="Horizontal">
+                    <Label>A választott adatbázis:</Label>
+                    <TextBlock FontWeight="Bold" 
+                               Margin="2 5 2 2"
+                               x:Name="txtSelectedDatabaseSource"
+                               Text="{Binding Path=SelectedDatabaseSource.Name}">
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+           
+    </Grid>
+</UserControl>

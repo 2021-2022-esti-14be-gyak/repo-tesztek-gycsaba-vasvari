@@ -1,0 +1,69 @@
+﻿<Window x:Class="Vizsgaremek.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vizsgaremek"
+        xmlns:converters="clr-namespace:Vizsgaremek.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1024" Width="1280" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <converters:DevelopVersionToVisibilityConverter x:Key="DevelopVersionToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid Width="1030" x:Name="RightPanel" HorizontalAlignment="Right">
+            <Grid x:Name="PageHeader" Height="150" VerticalAlignment="Top" Background="Wheat">
+            </Grid>
+            <Grid x:Name="PageContent" Height="874" VerticalAlignment="Bottom" Background="White">
+            </Grid>
+            <Grid x:Name="ContentStatus" Height="30" VerticalAlignment="Bottom" Background="Silver">
+                <StackPanel Orientation="Horizontal">
+                    <Label VerticalAlignment="Center">Kiválasztott adatforrás:</Label>
+                    <TextBlock x:Name="SelectedSource" Text="{Binding Path=SelectedSource}" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Width="250" x:Name="LeftPanel" HorizontalAlignment="Left">
+            <Grid x:Name="PageLogo" Height="150" VerticalAlignment="Top" Background="Orange">
+            </Grid>
+            <Grid x:Name="PageMenu" Height="874" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Blue">
+                <ListView PreviewMouseLeftButtonUp="ListView_PreviewMouseLeftButtonUp"   BorderBrush="Transparent" Background="Transparent">
+                    <ListViewItem FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <TextBlock>
+                            Menü 1.
+                        </TextBlock>
+                    </ListViewItem>
+                    <ListViewItem Height="30" x:Name="lviTeacher" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>
+                            <TextBlock Margin="2 2 2 2">
+                                Tanáradatok kezelése
+                            </TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Visibility="{Binding Converter={StaticResource DevelopVersionToVisibilityConverter}}"
+                        Height="30" x:Name="lviDatabaseSouceSelection" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>
+                            <TextBlock Margin="2 2 2 2">
+                                Adatábázis forrás választás
+                            </TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="30" x:Name="lviExit" FontFamily="Century Gothic" FontSize="13" Foreground="White">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Source="/Icons/exit.png" Margin="5 2 5 2"/>
+                            <TextBlock 
+                                Margin="10,0,0,0" 
+                                Text="{DynamicResource strMenuExit}" 
+                                VerticalAlignment="Center">
+                            </TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    
+                </ListView>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
