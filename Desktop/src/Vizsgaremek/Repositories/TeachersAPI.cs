@@ -48,6 +48,7 @@ namespace Vizsgaremek.Repositories
             switch (applicationStore.DbSource)
             {
                 case DbSource.NONE:
+                    InsertTeacherToTestData(entity);
                     break;
                 case DbSource.LOCALHOST:
                     break;
