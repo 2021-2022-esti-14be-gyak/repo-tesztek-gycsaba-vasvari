@@ -12,7 +12,7 @@ namespace Vizsgaremek.Repositories
     {
         private void InsertTeacherToTestData(Teacher teacher)
         {
-
+            teachers.Add(teacher);
         }
     }
 }
