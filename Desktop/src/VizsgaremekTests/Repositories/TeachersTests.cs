@@ -57,8 +57,16 @@ namespace Vizsgaremek.Repositories.Tests
                 Meal = true,
                 Emploeyment = EmploymentValue.DONEONCOMMISSION,
             };
-
-
+            // Egy tanár akit nem lehet insertálni
+            Teacher newNotCanInsertTeacher = new Teacher()
+            {
+                Id = "10101111111",
+                FirstName = "Nem Felvehető",
+                LastName = "Tanár",
+                Password = "jelszó",
+                Meal = true,
+                Emploeyment = EmploymentValue.DONEONCOMMISSION,
+            };
         }
     }
 }
