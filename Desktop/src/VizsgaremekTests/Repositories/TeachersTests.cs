@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vizsgaremek.Stores;
+using Vizsgaremek.Models;
 
 namespace Vizsgaremek.Repositories.Tests
 {
@@ -12,9 +14,11 @@ namespace Vizsgaremek.Repositories.Tests
     public class TeachersTests
     {
         [TestMethod()]
-        public void GetAllTest()
+        public void GetAllTestTestData()
         {
-            Assert.Fail();
+            ApplicationStore applicationStore = new ApplicationStore();
+            // A teszt adatokat fogjuk tesztelni
+            applicationStore.DbSource = DbSource.NONE;
         }
     }
 }
