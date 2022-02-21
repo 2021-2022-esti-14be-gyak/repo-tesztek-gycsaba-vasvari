@@ -19,6 +19,10 @@ namespace Vizsgaremek.Repositories.Tests
             ApplicationStore applicationStore = new ApplicationStore();
             // A teszt adatokat fogjuk tesztelni
             applicationStore.DbSource = DbSource.NONE;
+
+            //Példányosítottuk a teachers repót tesztadatokkal
+            Teachers teachers = new Teachers(applicationStore);
+
         }
     }
 }
