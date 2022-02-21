@@ -8,5 +8,9 @@ namespace Vizsgaremek.Repositories
 {
     public partial class Teachers
     {
+        private void InsertTeacherToTestData()
+        {
+
+        }
     }
 }
