@@ -80,6 +80,10 @@ namespace Vizsgaremek.Repositories.Tests
             int canInsertTeacherExpected = 7;
             int canInsertTeacherActaul = teachers.AllTeachers.Count();
             Assert.AreEqual(canInsertTeacherExpected, canInsertTeacherActaul, "Felvehető tanár felvétele esetén nem növekszik a tanárok száma a repoban!");
+            // Felvehető tanár megtalálható-e a listában
+            Teacher insertedTeacherExpected = newCanInsertTeacher;
+            Teacher insertedTeacherActaul = teachers.AllTeachers.Find(teacher => teacher == newCanInsertTeacher);
+            Assert.AreEqual(insertedTeacherExpected, insertedTeacherActaul, "A felvehető tanár, nem lett felvéve,  nincs a listában");
         }
     }
 }
