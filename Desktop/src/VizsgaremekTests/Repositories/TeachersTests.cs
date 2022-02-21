@@ -35,5 +35,9 @@ namespace Vizsgaremek.Repositories.Tests
             Assert.AreEqual(expected, actaul, "A teszt adatok nem készülnek el megfelelő számban!");
 
         }
-    }
+
+        [TestMethod()]
+        public void IsertTestTestData()
+        {
+        }
 }
