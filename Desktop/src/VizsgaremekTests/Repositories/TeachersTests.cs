@@ -23,6 +23,9 @@ namespace Vizsgaremek.Repositories.Tests
             //Példányosítottuk a teachers repót tesztadatokkal
             Teachers teachers = new Teachers(applicationStore);
 
+
+            // Példányosítás után a repo-ban a lista létezik-e
+            Assert.IsNotNull(teachers.AllTeachers, "A tanár lista nincs példányosítva!");
         }
     }
 }
