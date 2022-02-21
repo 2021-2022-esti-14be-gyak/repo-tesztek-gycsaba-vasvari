@@ -10,7 +10,7 @@ using Vizsgaremek.Repositories.Interface;
 
 namespace Vizsgaremek.Repositories
 {
-    partial class Teachers : IRepositoryAPIStringId<Teacher>
+    public partial class Teachers : IRepositoryAPIStringId<Teacher>
     {
         public List<Teacher> GetAll()
         {            
