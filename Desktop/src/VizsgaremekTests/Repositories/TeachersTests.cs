@@ -44,6 +44,8 @@ namespace Vizsgaremek.Repositories.Tests
             applicationStore.DbSource = DbSource.NONE;
             Teachers teachers = new Teachers(applicationStore);
 
+            // Példányosítás után a repo-ban a lista létezik-e
+            Assert.IsNotNull(teachers.AllTeachers, "A tanár lista nincs példányosítva!");
 
 
         }
