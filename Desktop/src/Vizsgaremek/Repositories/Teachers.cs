@@ -53,9 +53,15 @@ namespace Vizsgaremek.Repositories
 
         public void Update()
         {
-            teachers.Clear();
-            teachers = new List<Teacher>();
-            teachers = GetAll();
+            if (applicationStore.DbSource == DbSource.NONE)
+            {
+                if (!FindTeacherWithId("10101111111"))
+                    teachers = GetAll();
+            }
+            else
+            {
+                teachers = GetAll();
+            }
         }
     }
 }
