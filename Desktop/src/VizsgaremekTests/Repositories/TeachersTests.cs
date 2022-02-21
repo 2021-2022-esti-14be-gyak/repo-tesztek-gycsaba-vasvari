@@ -76,6 +76,10 @@ namespace Vizsgaremek.Repositories.Tests
             {
                 Assert.Fail("Fevehető tanár esetén, az Insert kivételt dob.\n" + e.Message);
             }
+            // Felvehető tanár esetén a tanárok száma egyel kell nőjön
+            int canInsertTeacherExpected = 7;
+            int canInsertTeacherActaul = teachers.AllTeachers.Count();
+            Assert.AreEqual(canInsertTeacherExpected, canInsertTeacherActaul, "Felvehető tanár felvétele esetén nem növekszik a tanárok száma a repoban!");
         }
     }
 }
