@@ -84,6 +84,25 @@ namespace Vizsgaremek.Repositories.Tests
             Teacher insertedTeacherExpected = newCanInsertTeacher;
             Teacher insertedTeacherActaul = teachers.AllTeachers.Find(teacher => teacher == newCanInsertTeacher);
             Assert.AreEqual(insertedTeacherExpected, insertedTeacherActaul, "A felvehető tanár, nem lett felvéve,  nincs a listában");
+
+            //Nem felvehető tanár felvétele
+            try
+            {
+                teachers.Insert(newNotCanInsertTeacher);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Nem felvehető tanár esetén, az Insert kivételt dob.\n" + e.Message);
+            }
+            // Az ismétlődő id-val csak egy tanár lehet, nem lehet kettő
+            int numberOfTeacherWithIdExptected = 1;
+            int numberOfTeacherWithIdActual= teachers.AllTeachers.FindAll(teacher => teacher.Id == newCanInsertTeacher.Id).Count;
+            Assert.AreEqual(numberOfTeacherWithIdExptected, numberOfTeacherWithIdActual, "Egy Id-ből több is van a listába amikor olyan tanár veszük fel, akinek az ID-je már szerepel a listába");
+        }
+    }
+}
+
+
         }
     }
 }
