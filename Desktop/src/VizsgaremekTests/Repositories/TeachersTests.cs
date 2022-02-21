@@ -67,6 +67,15 @@ namespace Vizsgaremek.Repositories.Tests
                 Meal = true,
                 Emploeyment = EmploymentValue.DONEONCOMMISSION,
             };
+            // Felvehető tanár felvétele a repository
+            try
+            {
+                teachers.Insert(newCanInsertTeacher);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Fevehető tanár esetén, az Insert kivételt dob.\n" + e.Message);
+            }
         }
     }
 }
