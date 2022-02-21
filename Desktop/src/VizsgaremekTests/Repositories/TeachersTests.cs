@@ -26,6 +26,12 @@ namespace Vizsgaremek.Repositories.Tests
 
             // Példányosítás után a repo-ban a lista létezik-e
             Assert.IsNotNull(teachers.AllTeachers, "A tanár lista nincs példányosítva!");
+
+            // A teszt adatok hat tanárt példányosítanak, ellenőrizzük, hogy megvannak-e
+            int expected = 6;
+            int actaul = teachers.GetAll().Count;
+
+
         }
     }
 }
