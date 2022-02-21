@@ -39,5 +39,13 @@ namespace Vizsgaremek.Repositories.Tests
         [TestMethod()]
         public void IsertTestTestData()
         {
+            // A repot-beállítjuk teszt adatokkal
+            ApplicationStore applicationStore = new ApplicationStore();
+            applicationStore.DbSource = DbSource.NONE;
+            Teachers teachers = new Teachers(applicationStore);
+
+
+
         }
+    }
 }
