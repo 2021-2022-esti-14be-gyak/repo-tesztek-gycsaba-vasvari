@@ -14,5 +14,25 @@ namespace Vizsgaremek.Repositories
         {
             teachers.Add(teacher);
         }
+
+        bool IsTeacherCanInsert(Teacher teacher)
+        {
+            if (FindTeacherWithId(teacher.Id))
+                return false;
+            else
+                return true;
+        }
+
+        private bool FindTeacherWithId(string id)
+        {
+            foreach (Teacher teacher in teachers)
+            {
+                if (teacher.Id.CompareTo(id) == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
