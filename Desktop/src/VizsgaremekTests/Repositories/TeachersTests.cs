@@ -47,6 +47,17 @@ namespace Vizsgaremek.Repositories.Tests
             // Példányosítás után a repo-ban a lista létezik-e
             Assert.IsNotNull(teachers.AllTeachers, "A tanár lista nincs példányosítva!");
 
+            // Egy tanár akit lehet insertálni
+            Teacher newCanInsertTeacher = new Teacher()
+            {
+                Id = "20101111111",
+                FirstName = "Új",
+                LastName = "Tanár",
+                Password = "jelszó",
+                Meal = true,
+                Emploeyment = EmploymentValue.DONEONCOMMISSION,
+            };
+
 
         }
     }
