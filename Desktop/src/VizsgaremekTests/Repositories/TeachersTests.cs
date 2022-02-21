@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vizsgaremek.Stores;
+using Vizsgaremek.Models;
 
 namespace Vizsgaremek.Repositories.Tests
 {
@@ -12,9 +14,26 @@ namespace Vizsgaremek.Repositories.Tests
     public class TeachersTests
     {
         [TestMethod()]
-        public void GetAllTest()
+        public void GetAllTestTestData()
         {
-            Assert.Fail();
+            ApplicationStore applicationStore = new ApplicationStore();
+            // A teszt adatokat fogjuk tesztelni
+            applicationStore.DbSource = DbSource.NONE;
+
+            //Példányosítottuk a teachers repót tesztadatokkal
+            Teachers teachers = new Teachers(applicationStore);
+
+
+            // Példányosítás után a repo-ban a lista létezik-e
+            Assert.IsNotNull(teachers.AllTeachers, "A tanár lista nincs példányosítva!");
+
+            // A teszt adatok hat tanárt példányosítanak, ellenőrizzük, hogy megvannak-e
+            int expected = 6;
+            int actaul = teachers.GetAll().Count;
+
+            // A teszt megvizsgálja, hogy megvan-e mind a hat
+            Assert.AreEqual(expected, actaul, "A teszt adatok nem készülnek el megfelelő számban!");
+
         }
     }
 }
