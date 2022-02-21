@@ -12,7 +12,10 @@ namespace Vizsgaremek.Repositories
     {
         private void InsertTeacherToTestData(Teacher teacher)
         {
-            teachers.Add(teacher);
+            if (IsTeacherCanInsert(teacher))
+            {
+                teachers.Add(teacher);
+            }
         }
 
         bool IsTeacherCanInsert(Teacher teacher)

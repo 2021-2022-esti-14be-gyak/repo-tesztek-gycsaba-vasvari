@@ -96,7 +96,7 @@ namespace Vizsgaremek.Repositories.Tests
             }
             // Az ismétlődő id-val csak egy tanár lehet, nem lehet kettő
             int numberOfTeacherWithIdExptected = 1;
-            int numberOfTeacherWithIdActual= teachers.AllTeachers.FindAll(teacher => teacher.Id == newCanInsertTeacher.Id).Count;
+            int numberOfTeacherWithIdActual= teachers.AllTeachers.FindAll(teacher => teacher.Id.CompareTo(newNotCanInsertTeacher.Id)==0).Count;
             Assert.AreEqual(numberOfTeacherWithIdExptected, numberOfTeacherWithIdActual, "Egy Id-ből több is van a listába amikor olyan tanár veszük fel, akinek az ID-je már szerepel a listába");
         }
     }
